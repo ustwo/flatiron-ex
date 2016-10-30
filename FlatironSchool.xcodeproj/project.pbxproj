@@ -10,6 +10,8 @@
 		C9C16D3F1DC6776500DC5091 /* FlatironSchool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C16D351DC6776500DC5091 /* FlatironSchool.framework */; };
 		C9C16D441DC6776500DC5091 /* FlatironSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C16D431DC6776500DC5091 /* FlatironSchoolTests.swift */; };
 		C9C16D461DC6776500DC5091 /* FlatironSchool.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C16D381DC6776500DC5091 /* FlatironSchool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9C16D501DC677F400DC5091 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C16D4F1DC677F400DC5091 /* Heap.swift */; };
+		C9C16D521DC6783500DC5091 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C16D511DC6783500DC5091 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		C9C16D3E1DC6776500DC5091 /* FlatironSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlatironSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C16D431DC6776500DC5091 /* FlatironSchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatironSchoolTests.swift; sourceTree = "<group>"; };
 		C9C16D451DC6776500DC5091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9C16D4F1DC677F400DC5091 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		C9C16D511DC6783500DC5091 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				C9C16D381DC6776500DC5091 /* FlatironSchool.h */,
 				C9C16D391DC6776500DC5091 /* Info.plist */,
+				C9C16D4F1DC677F400DC5091 /* Heap.swift */,
+				C9C16D511DC6783500DC5091 /* Extensions.swift */,
 			);
 			path = FlatironSchool;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					C9C16D341DC6776500DC5091 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					C9C16D3D1DC6776500DC5091 = {
@@ -196,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C16D501DC677F400DC5091 /* Heap.swift in Sources */,
+				C9C16D521DC6783500DC5091 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +326,7 @@
 		C9C16D4A1DC6776500DC5091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -330,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.FlatironSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -337,6 +348,7 @@
 		C9C16D4B1DC6776500DC5091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -357,6 +369,7 @@
 		C9C16D4D1DC6776500DC5091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlatironSchoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -369,6 +382,7 @@
 		C9C16D4E1DC6776500DC5091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlatironSchoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -397,6 +411,7 @@
 				C9C16D4B1DC6776500DC5091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9C16D4C1DC6776500DC5091 /* Build configuration list for PBXNativeTarget "FlatironSchoolTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +420,7 @@
 				C9C16D4E1DC6776500DC5091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
