@@ -30,10 +30,6 @@ public class Heap<T: Comparable> {
         self.backing = array
 
         var idx = backing.count / 2
-//        while idx < array.count - 1 {
-//            bubbleUp(index: idx)
-//            idx = idx + 1
-//        }
 
         while idx >= 0 {
             bubbleDown(index: idx)
@@ -66,16 +62,16 @@ public class Heap<T: Comparable> {
         let rightChildIndex = 2 * index + 2
         var top = index
 
-        let isMinHep = type == .min
+        let comparison: (T, T) -> Bool = type == .min ? (>) : (<)
 
         if leftChildIndex < backing.count {
-            if (backing[top] < backing[leftChildIndex]) != isMinHep {
+            if comparison(backing[top], backing[leftChildIndex]) {
                 top = leftChildIndex
             }
         }
 
         if rightChildIndex < backing.count {
-            if (backing[top] < backing[rightChildIndex]) != isMinHep {
+            if comparison(backing[top], backing[rightChildIndex]) {
                 top = rightChildIndex
             }
         }
@@ -88,10 +84,10 @@ public class Heap<T: Comparable> {
 
     func bubbleUp(index: Int) {
         let parentIndex = index % 2 == 0 ? (index / 2) - 1 : (index - 1) / 2
-        let isMinHeap = type == .min
+        let comparison: (T, T) -> Bool = type == .min ? (<) : (>)
 
         if parentIndex >= 0 {
-            if (backing[index] > backing[parentIndex]) != isMinHeap {
+            if comparison(backing[index], backing[parentIndex]) {
                 backing.swap(indexA: index, indexB: parentIndex)
                 bubbleUp(index: parentIndex)
             }
